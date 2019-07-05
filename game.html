@@ -38,6 +38,7 @@
 	spriteImage.src = "princess.png";
 
 	var saved_items = [];
+	var shop = null;
 	
 	spriteImage.onload = function() {
 		load_game();
@@ -46,29 +47,15 @@
 
 	function load_game() {
 		load_map();
-		var shop = new Shop();
+		shop = new Shop();
 		shop.loadItems();
 
 		if (saved_items.length != 0) {
 			load_saved(saved_items);
 		}
 
-
-		document.getElementById('shopButton').onclick = function() {
-        		button_contain.style.zIndex = "" + -1 * parseInt(button_contain.style.zIndex);
-        		shop_contain.style.zIndex = "" + -1 * parseInt(shop_contain.style.zIndex);
-        	};
-
-        var item_buttons = document.querySelectorAll(".itemButtons");
-        for (var i = 0; i < item_buttons.length; i++) {
-        	item_buttons[i].addEventListener('click', function(event) {
-        		const elem = event.target;
-        		const id = elem.id;
-        		shop.animateItem(id);
-        		this.disabled = true;
-
-        	});
-        }
+		toggle_shopbutton();
+		toggle_itembutton();
     }
 
 	function load_map() {
@@ -85,6 +72,26 @@
     		arr[i].getChar();
     	}
 
+    }
+
+    function toggle_shopbutton() {
+    	document.getElementById('shopButton').onclick = function() {
+        		button_contain.style.zIndex = "" + -1 * parseInt(button_contain.style.zIndex);
+        		shop_contain.style.zIndex = "" + -1 * parseInt(shop_contain.style.zIndex);
+        	};
+    }
+
+    function toggle_itembutton() {
+    	var item_buttons = document.querySelectorAll(".itemButtons");
+        for (var i = 0; i < item_buttons.length; i++) {
+        	item_buttons[i].addEventListener('click', function(event) {
+        		const elem = event.target;
+        		const id = elem.id;
+        		shop.animateItem(id);
+        		this.disabled = true;
+
+        	});
+        }
     }
 
 </script>
