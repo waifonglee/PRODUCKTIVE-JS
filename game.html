@@ -36,6 +36,8 @@
 
 	var spriteImage = new Image();
 	spriteImage.src = "princess.png";
+
+	var saved_items = [];
 	
 	spriteImage.onload = function() {
 		load_game();
@@ -46,8 +48,10 @@
 		load_map();
 		var shop = new Shop();
 		shop.loadItems();
-		var girl = new Sprite(spriteImage, [17,18,19,20,21,22,23,24], [64, 64], [0, 0]);
-		girl.getChar();
+
+		if (saved_items.length != 0) {
+			load_saved(saved_items);
+		}
 
 
 		document.getElementById('shopButton').onclick = function() {
@@ -74,7 +78,15 @@
             };
             i.src = 'ducky.png';
        
-        }
+    }
+
+    function load_saved(arr) {
+    	for (var i = 0; i < arr.length; i++) {
+    		arr[i].getChar();
+    	}
+
+    }
+
 </script>
 </body>
 </html>

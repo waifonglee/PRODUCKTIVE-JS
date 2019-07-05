@@ -13,6 +13,7 @@ var Shop = function() {
 		var _id = parseInt(id.charAt(1));
 		var info = _this.items[_id];
 		var char = new Sprite(spriteImage, info.frameset, info.size, info.pos);
+		saved_items.push(char);
 		char.getChar();
 
 	}
