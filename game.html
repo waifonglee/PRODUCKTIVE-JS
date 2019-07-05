@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="gamestyle.css">
+	<link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+	<div id = containcanvas>
+  		<button id='shopButton'> Shop </button>
+		<canvas id="bg"> </canvas>
+		<canvas id="fg"> </canvas>
+		<div id="shop">
+			<img id = "bgimg" src="princess.png"> 
+		</div>
+		<div id = "buttonsContain"> </div>
+	</div>
+
+	<script src = "sprite.js" type = "text/javascript"></script>
+
+	<script>
+	var background = document.getElementById("bg");
+	background.width = 1408;
+	background.height = 832;
+	var cxt_bg = background.getContext('2d');
+	var foreground = document.getElementById("fg");
+	foreground.width = 1408;
+	foreground.height = 832;
+	var cxt_fg = foreground.getContext('2d');
+	var button_contain = document.getElementById('buttonsContain');
+	button_contain.style.zIndex = "-6";
+	var shop_contain = document.getElementById('shop');
+	shop_contain.style.zIndex = "-5";
+
+
+	var spriteImage = new Image();
+	spriteImage.src = "princess.png";
+	
+
+	spriteImage.onload = function() {
+		load_game();
+	}
+
+
+	function load_game() {
+		var girl = new Sprite(spriteImage, [17,18,19,20,21,22,23,24], [64, 64], [0, 0]);
+		girl.getChar();
+
+	}
+</script>
+</body>
+</html>
