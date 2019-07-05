@@ -33,7 +33,6 @@
 	var shop_contain = document.getElementById('shop');
 	shop_contain.style.zIndex = "-5";
 
-
 	var spriteImage = new Image();
 	spriteImage.src = "princess.png";
 	
@@ -44,10 +43,47 @@
 
 
 	function load_game() {
+		load_map();
+		var shop = new Shop();
+		shop.loadItems();
 		var girl = new Sprite(spriteImage, [17,18,19,20,21,22,23,24], [64, 64], [0, 0]);
 		girl.getChar();
 
+
+		document.getElementById('shopButton').onclick = function() {
+        		button_contain.style.zIndex = "" + -1 * parseInt(button_contain.style.zIndex);
+        		shop_contain.style.zIndex = "" + -1 * parseInt(shop_contain.style.zIndex);
+        	};
+
+        var item_buttons = document.querySelectorAll(".itemButtons");
+        for (var i = 0; i < item_buttons.length; i++) {
+        	item_buttons[i].addEventListener('click', function(event) {
+        		const elem = event.target;
+        		const id = elem.id;
+        		
+        	})
+        }
+
+
+
+
+        for(var i = 0; i < prices.length; i++) {
+        		prices[i].addEventListener('click', function(event) {
+        			const elem = event.target;
+        			const id = elem.id;
+        			var done = false;		
+
+
 	}
+
+	function load_map() {
+            var i = new Image;
+            i.onload = function() {
+                cxt_bg.drawImage(i, 0, 0,1408,832,500,0,1408,832);
+            };
+            i.src = 'ducky.png';
+       
+        }
 </script>
 </body>
 </html>

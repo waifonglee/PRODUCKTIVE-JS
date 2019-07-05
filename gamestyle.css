@@ -1,0 +1,50 @@
+#containcanvas {
+  position: relative;
+}
+
+#bg {
+  border:1px solid black;
+  position:absolute;
+  z-index: 2;
+}
+
+#fg {
+  position:absolute;
+  z-index: 3;
+}
+
+#shop {
+  border: 1px solid red;
+  position: absolute;
+  margin-left: 1000px;
+  margin-top: 60px;
+
+  height: 500px;
+  width: 400px;
+  overflow-y: scroll;
+}
+
+#shopButton {
+  position: absolute;
+  margin-left: 1200px;
+  height: 40px;
+  width: 70px;
+  z-index: 4;
+}
+
+#buttonsContain {
+  border: 1px solid pink;
+  position: absolute;
+  margin-left: 1000px;
+  margin-top: 60px;
+  height: 500px;
+  width: 400px;
+  overflow-y: scroll;
+
+}
+
+.itemButtons{
+  height: 30px;
+  width: 128px;
+}
+
