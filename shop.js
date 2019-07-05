@@ -9,6 +9,14 @@ var Shop = function() {
 		addButtons();
 	}
 
+	this.animateItem = function(id) {
+		var _id = parseInt(id.charAt(1));
+		var info = _this.items[_id];
+		var char = new Sprite(spriteImage, info.frameset, info.size, info.pos);
+		char.getChar();
+
+	}
+
 	function addItem(frameset, size, pos, price) {
 		var info = {
 			"frameset": frameset,

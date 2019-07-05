@@ -18,6 +18,7 @@
 	</div>
 
 	<script src = "sprite.js" type = "text/javascript"></script>
+	<script src = "shop.js" type = "text/javascript"></script>
 
 	<script>
 	var background = document.getElementById("bg");
@@ -36,7 +37,6 @@
 	var spriteImage = new Image();
 	spriteImage.src = "princess.png";
 	
-
 	spriteImage.onload = function() {
 		load_game();
 	}
@@ -60,21 +60,12 @@
         	item_buttons[i].addEventListener('click', function(event) {
         		const elem = event.target;
         		const id = elem.id;
-        		
-        	})
+        		shop.animateItem(id);
+        		this.disabled = true;
+
+        	});
         }
-
-
-
-
-        for(var i = 0; i < prices.length; i++) {
-        		prices[i].addEventListener('click', function(event) {
-        			const elem = event.target;
-        			const id = elem.id;
-        			var done = false;		
-
-
-	}
+    }
 
 	function load_map() {
             var i = new Image;
