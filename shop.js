@@ -5,7 +5,10 @@ var Shop = function() {
 	var _this = this;
 
 	this.loadItems = function() {
-		addItem([25,26,27,28,29,30,31,32], [64, 64], [100, 100], 20);
+		addItem([0,1], [128, 256], [100, 100], 20);
+		addItem([2,3], [128, 256], [200, 500], 20);
+		addItem([4,5], [128, 256], [300, 0], 20);
+		addItem([6,7], [128, 256], [500, 400], 20);
 		addButtons();
 	}
 
@@ -28,8 +31,10 @@ var Shop = function() {
 			"button_top": 0, //top margin of button
 			"button_left": 0 //left margin of button
 		}
-		info.button_top = Math.floor(info.id / 3) * (128 + 30) + 128; 
-		info.button_left = Math.floor(info.id % 3) * (128);
+		//info.button_top = Math.floor(info.id / 2) * (128) + 128; 
+		info.button_top = 128;
+		//info.button_left = Math.floor(info.id % 2) * (128);
+		info.button_left = 50;
 		_this.cur_count++;
 		_this.items.push(info);
 	}

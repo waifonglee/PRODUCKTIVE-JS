@@ -1,8 +1,8 @@
 var Sprite = function(img, frameset, size, pos) {
-	this.frameset = frameset;
+	this.frameset = frameset; //frameset starts from 0
 	this._size = size; //size of character
 	this.pos = pos; //position of character
-	this.num_row = frameset.length; 
+	this.num_row = 4; 
 	this.img = img; //spritesheet
 	this._index = 0; //index of frame at frameset
 	this._frame = this.frameset[this._index];
@@ -23,7 +23,7 @@ var Sprite = function(img, frameset, size, pos) {
 
 	function move() {
 		_this.count++;
-		if (_this.count < 10) {
+		if (_this.count < 25) {
 			window.requestAnimationFrame(move);
 			return;
 		}
@@ -33,7 +33,7 @@ var Sprite = function(img, frameset, size, pos) {
 		drawFrame();
 		_this._index ++;
 
-		if (_this._index == _this.num_row - 1) {
+		if (_this._index == 2) {
 			_this._index = 0;
 		}
 
